@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+                "Fira Sans", "Droid Sans", "Helvetica Neue",
+                sans-serif;
+
+        }
+
+        .container-card {
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: rgb(61, 58, 57);
+            width: 900px;
+            border-radius: 9px;
+            opacity: 0.6;
+            padding-bottom: 19px;
+            border: 2px;
+            border-style: solid;
+            border-color: #f9f5f55d;
+
+
+        }
+
+        .image-card {
+            background-image: url("https://img.freepik.com/free-vector/technology-background-abstract-style_23-2147826149.jpg?w=740&t=st=1687886164~exp=1687886764~hmac=56f65c2a6ac7b2c91c5c5073fc59601fa5e829b98b1d703ecd88169df3e5469e");
+
+            background-size: cover;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 170px;
+
+        }
+
+        .unit {
+            margin-top: 15px;
+            padding: 9px;
+        }
+
+        .btn {
+            background-color: #b5ebf7;
+            color: #624d9a;
+            border-radius: 5px;
+            max-width: 150px;
+            max-height: 190px;
+            margin: 20px;
+            box-shadow: #0b0b0b 5px 5px 10px 4px;
+            font-size: 20px;
+
+        }
+
+        .btn:hover {
+            color: rgb(23, 16, 16);
+            font-weight: bold;
+            background-color: rgb(12, 70, 121);
+        }
+
+        .head {
+            background-color: #5b7876;
+            color: #fff;
+            min-height: 70px;
+            padding-top: 30px;
+            letter-spacing: 6px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 30px;
+            text-shadow: #0d201ee4 3px 4px 5px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        .design {
+            background-color: #28474d;
+        }
+
+        #value {
+            color: #f3eaea;
+            font-size: 20px;
+            border-radius: 3px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-shadow: #26484f 2px 3px 4px;
+            box-sizing: border-box;
+
+        }
+    </style>
+</head>
+
+
+<body class="image-card">
+
+    <form class="box">
+        <div class="container-card">
+            <h2 class="head" id="head"> UNIT CONVERTER</h2>
+            <lable class="unit">
+                <span id="value"> Enter the value :</span>
+                <input type="text" placeholder="Eg. 345" id="input">
+                <select class="design" id="inputtype">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="Fahrenheit"> Fahrenheit</option>
+                    <option value="yards">Yards</option>
+                    <option value="miles">Miles</option>
+
+                </select>
+                <br><br>
+
+                <label id="value">Choose Conversion Value :</label>
+                <select id="resultype value" class="design">
+                    <option value="meter">Meter</option>
+                    <option value="kilometer">Kilometer</option>
+                    <option value="centimeter">Centimeter</option>
+                    <option value="Celcius">Celcius</option>
+                    <option value="kelvin">Kelvin</option>
+                    <option value="Feet">Feet</option>
+                    <option value="inches">Inches</option>
+                    <option value="yards">Yards</option>
+
+                </select>
+            </lable>
+            <lable class="unit" id="value">
+                <span id="value"> Result :</span>
+                <input type="text" id="result" placeholder="Result..">
+            </lable><br>
+            <input type="reset" value="Reset" class="btn">
+
+
+
+    </form>
+    </div>
+    <footer
+        style="background-color: black; font-family: 'Times New Roman', Times, serif; color: white; height: 30vh; width: 100vw; margin-top: 10%; padding: 20px; font-size: 15px; text-align: center;">
+        <div>
+            <span>email-Id : rinshikadubey@gmail.com</span><br></br>
+            <span>© 2023, Inc. All rights reserved.</span>
+
+            <h3>Contact Us | Unit Converter</h3>
+
+        </div>
+    </footer>
+    <script>
+        var input = document.getElementById('input');
+        var result = document.getElementById('result');
+        var inputtype = document.getElementById('inputtype');
+        var resultype = document.getElementById('resultype');
+        var inputtypevalue, resulttypevalue;
+
+        input.addEventListener("keyup", myresult);
+        inputtype.addEventListener("change", myresult);
+        resultype.addEventListener("change", myresult);
+
+        inputtypevalue = inputtype.value;
+        resulttypevalue = resultype.value;
+
+
+        function myresult() {
+
+            inputtypevalue = inputtype.value;
+            resulttypevalue = resultype.value;
+
+            if (inputtypevalue === "meter" && resulttypevalue === "centimeter") {
+                result.value = (input.value) / 0.01;
+            }
+            else if (inputtypevalue === "meter" && resulttypevalue === "kilometer") {
+                result.value = (input.value) / 1000;
+            }
+            else if (inputtypevalue === "meter" && resulttypevalue === "meter") {
+                result.value = input.value;
+
+            }
+            else if (inputtypevalue == "meter" && resulttypevalue == "Feet") {
+                result.value = (input.value) * 3.2808;
+            }
+            else if (inputtypevalue == "meter" && resulttypevalue == "inches") {
+                result.value = (input.value) * 39.370;
+            }
+            else if (inputtypevalue == "meter" && resulttypevalue == "yards") {
+                result.value = (input.value) * 1.0936;
+            }
+            else if (inputtypevalue == "meter" && resulttypevalue == "miles") {
+                result.value = (input.value) * 0.00062137;
+            }
+
+
+
+
+            if (inputtypevalue === "kilometer" && resulttypevalue === "meter") {
+                result.value = (input.value) * 1000;
+            }
+
+            else if (inputtypevalue === "kilometer" && resulttypevalue === "centimeter") {
+                result.value = (input.value) * 100000;
+            }
+            else if (inputtypevalue === "kilometer" && resulttypevalue === "kilometer") {
+                result.value = input.value;
+            }
+            else if (inputtypevalue == "kilometer" && resulttypevalue == "Feet") {
+                result.value = (input.value) * 3280.8;
+            }
+            else if (inputtypevalue == "kilometer" && resulttypevalue == "inches") {
+                result.value = (input.value) * 39370;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "yards") {
+                result.value = (input.value) * 1093.6;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "miles") {
+                result.value = (input.value) * 0.62137;
+            }
+
+
+
+
+            if (inputtypevalue === "centimeter" && resulttypevalue === "kilometer") {
+                result.value = (input.value) * 1000;
+            }
+            else if (inputtypevalue === "centimeter" && resulttypevalue === "meter") {
+                result.value = (input.value) * 100000;
+            }
+            else if (inputtypevalue === "centimeter" && resulttypevalue === "centimeter") {
+                result.value = input.value;
+            }
+            else if (inputtypevalue == "centimeter" && resulttypevalue == "Feet") {
+                result.value = (input.value) * 0.032808;
+            }
+            else if (inputtypevalue == "centimeter" && resulttypevalue == "inches") {
+                result.value = (input.value) * 0.39370;
+            }
+            else if (inputtypevalue == "centimeter" && resulttypevalue == "yards") {
+                result.value = (input.value) * 0.010936;
+            }
+            else if (inputtypevalue == "centimeter" && resulttypevalue == "miles") {
+                result.value = (input.value) * 0.0000062137;
+            }
+
+
+
+
+            if (inputtypevalue === "Fahrenheit" && resulttypevalue === "Celcius") {
+                result.value = (input.value - 32) / 1.8;
+            }
+            else if (inputtypevalue === "Fahrenheit" && resulttypevalue === "kelvin") {
+                result.value = (input.value - 32) / 1.8 + 273.15;
+            }
+
+
+
+            if (inputtypevalue == "yards" && resulttypevalue == "meter") {
+                result.value - (input.value) / 1.0936;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "kilometer") {
+                result.value = (input.value) / 1093.6;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "centimeter") {
+                result.value = (input.value) / 0.010936;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "Feet") {
+                result.value = (input.value) * 3;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "inches") {
+                result.value = (input.value) * 36;
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "yards") {
+                result.value = (input.value);
+            }
+            else if (inputtypevalue == "yards" && resulttypevalue == "miles") {
+                result.value = (input.value) * 0.00056818;
+            }
+
+
+
+
+
+            if (inputtypevalue == "miles" && resulttypevalue == "meter") {
+                result.value - (input.value) / 0.00062137;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "kilometer") {
+                result.value = (input.value) / 0.62137;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "centimeter") {
+                result.value = (input.value) / 0.0000062137;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "Feet") {
+                result.value = (input.value) * 5280;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "inches") {
+                result.value = (input.value) * 63360;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "yards") {
+                result.value = (input.value) * 1760;
+            }
+            else if (inputtypevalue == "miles" && resulttypevalue == "miles") {
+                result.value = (input.value);
+            }
+        }
+    </script>
+</body>
+
+</html>
