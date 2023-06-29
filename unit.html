@@ -124,7 +124,7 @@
                 <br><br>
 
                 <label id="value">Choose Conversion Value :</label>
-                <select id="resultype value" class="design">
+                <select id="resultype" class="design">
                     <option value="meter">Meter</option>
                     <option value="kilometer">Kilometer</option>
                     <option value="centimeter">Centimeter</option>
@@ -136,11 +136,11 @@
 
                 </select>
             </lable>
-            <lable class="unit" id="value">
+            <lable class="unit">
                 <span id="value"> Result :</span>
                 <input type="text" id="result" placeholder="Result..">
             </lable><br>
-            <input type="reset" value="Reset" class="btn">
+            <input type="reset" value="reset" class="btn">
 
 
 
@@ -186,16 +186,16 @@
                 result.value = input.value;
 
             }
-            else if (inputtypevalue == "meter" && resulttypevalue == "Feet") {
+            else if (inputtypevalue === "meter" && resulttypevalue === "Feet") {
                 result.value = (input.value) * 3.2808;
             }
-            else if (inputtypevalue == "meter" && resulttypevalue == "inches") {
+            else if (inputtypevalue === "meter" && resulttypevalue === "inches") {
                 result.value = (input.value) * 39.370;
             }
-            else if (inputtypevalue == "meter" && resulttypevalue == "yards") {
+            else if (inputtypevalue === "meter" && resulttypevalue === "yards") {
                 result.value = (input.value) * 1.0936;
             }
-            else if (inputtypevalue == "meter" && resulttypevalue == "miles") {
+            else if (inputtypevalue === "meter" && resulttypevalue === "miles") {
                 result.value = (input.value) * 0.00062137;
             }
 
@@ -212,16 +212,16 @@
             else if (inputtypevalue === "kilometer" && resulttypevalue === "kilometer") {
                 result.value = input.value;
             }
-            else if (inputtypevalue == "kilometer" && resulttypevalue == "Feet") {
+            else if (inputtypevalue === "kilometer" && resulttypevalue === "Feet") {
                 result.value = (input.value) * 3280.8;
             }
-            else if (inputtypevalue == "kilometer" && resulttypevalue == "inches") {
+            else if (inputtypevalue === "kilometer" && resulttypevalue === "inches") {
                 result.value = (input.value) * 39370;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "yards") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "yards") {
                 result.value = (input.value) * 1093.6;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "miles") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "miles") {
                 result.value = (input.value) * 0.62137;
             }
 
@@ -234,19 +234,19 @@
             else if (inputtypevalue === "centimeter" && resulttypevalue === "meter") {
                 result.value = (input.value) * 100000;
             }
-            else if (inputtypevalue === "centimeter" && resulttypevalue === "centimeter") {
+            else if (inputtypevalue == "centimeter" && resulttypevalue === "centimeter") {
                 result.value = input.value;
             }
-            else if (inputtypevalue == "centimeter" && resulttypevalue == "Feet") {
+            else if (inputtypevalue === "centimeter" && resulttypevalue === "Feet") {
                 result.value = (input.value) * 0.032808;
             }
-            else if (inputtypevalue == "centimeter" && resulttypevalue == "inches") {
+            else if (inputtypevalue === "centimeter" && resulttypevalue === "inches") {
                 result.value = (input.value) * 0.39370;
             }
-            else if (inputtypevalue == "centimeter" && resulttypevalue == "yards") {
+            else if (inputtypevalue === "centimeter" && resulttypevalue === "yards") {
                 result.value = (input.value) * 0.010936;
             }
-            else if (inputtypevalue == "centimeter" && resulttypevalue == "miles") {
+            else if (inputtypevalue === "centimeter" && resulttypevalue ==="miles") {
                 result.value = (input.value) * 0.0000062137;
             }
 
@@ -262,25 +262,25 @@
 
 
 
-            if (inputtypevalue == "yards" && resulttypevalue == "meter") {
-                result.value - (input.value) / 1.0936;
+            if (inputtypevalue === "yards" && resulttypevalue === "meter") {
+                result.value = (input.value) / 1.0936;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "kilometer") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "kilometer") {
                 result.value = (input.value) / 1093.6;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "centimeter") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "centimeter") {
                 result.value = (input.value) / 0.010936;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "Feet") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "Feet") {
                 result.value = (input.value) * 3;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "inches") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "inches") {
                 result.value = (input.value) * 36;
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "yards") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "yards") {
                 result.value = (input.value);
             }
-            else if (inputtypevalue == "yards" && resulttypevalue == "miles") {
+            else if (inputtypevalue === "yards" && resulttypevalue === "miles") {
                 result.value = (input.value) * 0.00056818;
             }
 
@@ -288,25 +288,25 @@
 
 
 
-            if (inputtypevalue == "miles" && resulttypevalue == "meter") {
-                result.value - (input.value) / 0.00062137;
+            if (inputtypevalue === "miles" && resulttypevalue === "meter") {
+                result.value = (input.value) / 0.00062137;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "kilometer") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "kilometer") {
                 result.value = (input.value) / 0.62137;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "centimeter") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "centimeter") {
                 result.value = (input.value) / 0.0000062137;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "Feet") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "Feet") {
                 result.value = (input.value) * 5280;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "inches") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "inches") {
                 result.value = (input.value) * 63360;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "yards") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "yards") {
                 result.value = (input.value) * 1760;
             }
-            else if (inputtypevalue == "miles" && resulttypevalue == "miles") {
+            else if (inputtypevalue === "miles" && resulttypevalue === "miles") {
                 result.value = (input.value);
             }
         }
